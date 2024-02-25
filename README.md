@@ -28,11 +28,12 @@ Before running the script, ensure you have the following prerequisites:
 - Node.js installed on your machine
 - MongoDB instance running locally or accessible via a connection string
 - Firebase project with Firestore enabled and a service account JSON file
+- Postman (For testing the API)
 
 ## Installation
 
 Step 1:
- git clone https://github.com/sindhusid5/group3.git
+git clone https://github.com/sindhusid5/booking.git
 
 Step 2:
  cd group3
