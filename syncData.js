@@ -1,13 +1,13 @@
 const admin = require('firebase-admin');
 const express = require('express');
 const bodyParser = require('body-parser');
-const ageVerify = require("./handler/ageVerify");
+const ageVerify = require('./handler/ageVerify');
 const userRoutes = require('./routes/userRoutes');
 const eventRoutes = require('./routes/eventRoute');
 const mongoose = require('mongoose');
 const bookingRoutes = require('./handler/ticketBooking');
-const organizeRoutes = require('./routes/organizerRoutes')
-
+const organizeRoutes = require('./routes/organizerRoutes');
+const fs = require('fs');
 const { ObjectId } = require('mongoose').Types;
 
 require('dotenv').config();
@@ -16,7 +16,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Configure Firebase credentials
-const serviceAccount = require('./group3-f6a87-firebase-adminsdk-9eq44-f3716f1f11.json');
+const serviceAccountPath = process.env.SERVICE_ACCOUNT_KEY_PATH;
+const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf8'));
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
