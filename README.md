@@ -4,8 +4,7 @@
 ## Use Case Identification
 
 1. **Role:**
-   - User
-   - Event-Organizer
+   - User and Event-Organizer
 
 2. **User Registration:**
    - Users registering with the system must be at least 18 years old.
@@ -26,7 +25,7 @@
    - Each user is limited to booking a maximum of 4 tickets per account.
 
 7. **Confirmation Email:**
-   - Upon successful ticket booking, users receive a confirmation email with details regarding their reserved seats for the event.
+   - Upon successful ticket booking, users receive a confirmation email, providing assurance and details regarding their reserved seats for the event.
 
 ## MongoDB ↔ Firestore Data Sync
 
@@ -34,14 +33,14 @@ This script automates the synchronization of data between MongoDB and Firestore.
 
 ### Prerequisites
 
-Before running the script, ensure you have the following:
+Before running the script, ensure you have the following prerequisites:
 
 - Node.js installed on your machine
 - MongoDB instance running locally or accessible via a connection string
 - Firebase project with Firestore enabled and a service account JSON file
 - Postman (for testing the API)
 
-### Installation
+### Installation and Setup
 
 1. **Clone the repository:**
 
@@ -55,16 +54,32 @@ Before running the script, ensure you have the following:
    cd booking
    ```
 
-3. **Install the necessary dependencies:**
+3. **Install dependencies:**
 
    ```bash
    npm install
    ```
 
-4. **Run the synchronization script:**
+4. **Set up MongoDB:**
+   - Ensure MongoDB is running locally or have a connection string to a remote MongoDB instance.
+   - If you don't have MongoDB installed, download and install it from the [official MongoDB website](https://www.mongodb.com/try/download/community).
+
+5. **Set up Firebase:**
+   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
+   - Enable Firestore in your Firebase project.
+   - Generate a service account JSON file from your Firebase project settings and save it in your project directory.
+
+6. **Run the synchronization script:**
 
    ```bash
    node syncData.js
    ```
 
-By following these steps, you will set up the environment and run the script to synchronize data between MongoDB and Firestore.
+### Additional Notes
+
+- **MongoDB Setup:**
+  - Make sure you have a MongoDB database and collection set up with the data you want to synchronize.
+  - Refer to [MongoDB Documentation](https://docs.mongodb.com/manual/installation/) for detailed installation and setup instructions.
+
+- **Firebase Setup:**
+  - Follow the [Firebase Documentation](https://firebase.google.com/docs/firestore/quickstart) for creating a project and setting up Firestore. 
